@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Nomes para Gatinhos</title>
+
+  <!-- Fontes fofas -->
+  <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Gamja+Flower&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #BD9D86;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 50px;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #331906;
+      font-family: 'Gamja Flower', cursive;
+    }
+
+    p {
+      font-size: 30px;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #57341B;
+      font-family: 'Gamja Flower', cursive;
+    }
+
+    h2 {
+      font-size: 27px;
+      margin-bottom: 10px;
+      font-family: 'Cute Font', cursive;
+      text-align: center;
+      color: #8A6246;
+    }
+
+    label {
+      font-family: 'Gamja Flower', cursive;
+      font-size: 22px;
+      color: #57341B;
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    select {
+      font-family: 'Gamja Flower', cursive;
+      font-size: 20px;
+      padding: 8px 16px;
+      border: 2px solid #8A6246;
+      border-radius: 10px;
+      background-color: #FFF3E6;
+      color: #57341B;
+      margin: 10px auto;
+      display: block;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      cursor: pointer;
+    }
+
+    button {
+      font-family: 'Gamja Flower', cursive;
+      background-color: #FFF3E6;
+      color: #57341B;
+      font-size: 24px;
+      border: 2px solid #8A6246;
+      border-radius: 12px;
+      padding: 10px 20px;
+      margin: 20px auto;
+      display: block;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    button:hover {
+      background-color: #FDE9D8;
+      transform: scale(1.05);
+    }
+
+    * {
+      cursor: url('minimal_cat_paw_cursor.cur'), auto;
+    }
+
+    .gatinho-topo-esquerda {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      z-index: 10;
+    }
+
+    .gatinho-topo-direita {
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+      width: 230px;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Imagens decorativas -->
+  <img src="cafezin.png" class="gatinho-topo-esquerda" alt="gatinho esquerdo">
+  <img src="c7f267fd-289c-4809-b80c-c5a892c0d40b.png" class="gatinho-topo-direita" alt="gatinho direito">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <h1>Indeciso(a) em qual nome dar a seu gatinho?</h1>
+
+  <p>Características do seu miau:</p>
+
+  <label for="genero">Gênero:</label>
+  <select id="genero">
+    <option value="">Selecione</option>
+    <option value="macho">Macho</option>
+    <option value="femea">Fêmea</option>
+  </select>
+
+  <label for="cor">Cor:</label>
+  <select id="cor">
+    <option value="">Selecione</option>
+    <option value="branco">Branco</option>
+    <option value="preto">Preto</option>
+    <option value="laranja">Laranja</option>
+    <option value="cinza">Cinza</option>
+    <option value="rajado">Rajado</option>
+  </select>
+
+  <button onclick="sugerirNome()">GERAR NOME PERFEITO!</button>
+
+  <h2>Nome sugerido:</h2>
+  <p id="nome-sugerido">...</p>
+
+  <script>
+    const nomesDeGatos = {
+      macho: {
+        branco: ["Neve", "Alvo", "Branquinho"],
+        preto: ["Sombra", "Pantera", "Zorro"],
+        laranja: ["Tigre", "Fogo", "Garfield"],
+        cinza: ["Cinza", "Fumaça", "Nublado"],
+        rajado: ["Rajado", "Tigrão", "Zeus"]
+      },
+      femea: {
+        branco: ["Branquinha", "Nuvem", "Estrelinha"],
+        preto: ["Luna", "Noir", "Pretinha"],
+        laranja: ["Chilli", "Laranjinha", "Fofinha"],
+        cinza: ["Cinzinha", "Tempestade", "Fumaça"],
+        rajado: ["Rajadinha", "Tigresa", "Mimi"]
+      }
+    };
+
+    function sugerirNome() {
+      const generoEscolhido = document.getElementById("genero").value;
+      const corEscolhida = document.getElementById("cor").value;
+
+      if (generoEscolhido && corEscolhida) {
+        const listaDeNomes = nomesDeGatos[generoEscolhido][corEscolhida];
+        const nomeSorteado = listaDeNomes[Math.floor(Math.random() * listaDeNomes.length)];
+        document.getElementById("nome-sugerido").textContent = nomeSorteado;
+      } else {
+        document.getElementById("nome-sugerido").textContent = "Por favor, escolha o gênero e a cor.";
+      }
+    }
+  </script>
+</body>
+</html>
+
