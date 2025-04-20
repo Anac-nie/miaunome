@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nomes para Gatinhos</title>
 
   <!-- Fontes fofas -->
@@ -12,6 +13,7 @@
       background-color: #BD9D86;
       margin: 0;
       padding: 0;
+      font-family: 'Gamja Flower', cursive;
     }
 
     h1 {
@@ -19,7 +21,6 @@
       text-align: center;
       margin-bottom: 10px;
       color: #331906;
-      font-family: 'Gamja Flower', cursive;
     }
 
     p {
@@ -27,7 +28,6 @@
       margin-bottom: 10px;
       text-align: center;
       color: #57341B;
-      font-family: 'Gamja Flower', cursive;
     }
 
     h2 {
@@ -39,7 +39,6 @@
     }
 
     label {
-      font-family: 'Gamja Flower', cursive;
       font-size: 22px;
       color: #57341B;
       display: block;
@@ -48,7 +47,6 @@
     }
 
     select {
-      font-family: 'Gamja Flower', cursive;
       font-size: 20px;
       padding: 8px 16px;
       border: 2px solid #8A6246;
@@ -62,7 +60,6 @@
     }
 
     button {
-      font-family: 'Gamja Flower', cursive;
       background-color: #FFF3E6;
       color: #57341B;
       font-size: 24px;
@@ -85,20 +82,33 @@
       cursor: url('minimal_cat_paw_cursor.cur'), auto;
     }
 
-    .gatinho-topo-esquerda {
+    .gatinho-topo-esquerda, .gatinho-topo-direita {
       position: absolute;
+      z-index: 10;
+      width: 200px;
+    }
+
+    .gatinho-topo-esquerda {
       top: 0;
       left: 0;
-      width: 200px;
-      z-index: 10;
     }
 
     .gatinho-topo-direita {
-      position: absolute;
-      bottom: 0px;
+      bottom: 0;
       right: 0;
-      width: 230px;
-      z-index: 10;
+    }
+
+    /* Media Queries para telas menores */
+    @media (max-width: 768px) {
+      .gatinho-topo-esquerda, .gatinho-topo-direita {
+        width: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gatinho-topo-esquerda, .gatinho-topo-direita {
+        width: 120px;
+      }
     }
   </style>
 </head>
@@ -169,4 +179,3 @@
   </script>
 </body>
 </html>
-
