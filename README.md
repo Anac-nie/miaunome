@@ -12,12 +12,4 @@ JavaScript – Interatividade e lógica para sugerir nomes personalizados.
 
 ✨🐈 Como Funciona?
 
-O usuário acessa o site.
-
-Seleciona o gênero do gatinho (macho ou fêmea).
-
-Escolhe a cor.
-
-O site sugere nomes baseados nas escolhas!
-
-Rápido e divertido! 🐾
+O usuário acessa o site, seleciona o gênero e a cor, o site sugere nomes baseados nas escolhas!🐾
